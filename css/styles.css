@@ -3,11 +3,13 @@
 }
 
 :root {
+  --title-color: #4c545c;
   --text-color: #9eabb2;
   --green: #26bba4;
   --blue: #6174ff;
   --button-color: transparent;
   --button-inner-shadow: inset 0 -3px rgb(0 0 0 / 0.15);
+  --footer-bg: rgb(159 171 178 / 0.15);
 }
 
 img {
@@ -32,73 +34,145 @@ body {
   font-family: 'Bai Jamjuree', sans-serif;
   max-width: 1440px;
   margin-inline: auto;
-}
-
-h1,
-h2 {
-  font-weight: 600;
-}
-
-main {
-  padding-inline: 32px;
+  color: var(--text-color);
+  line-height: 1.625rem;
+  letter-spacing: 0.12px;
 }
 
 .header {
-  padding: 123px 32px 0;
+  margin-bottom: 160px;
+  padding-top: 10.1875rem;
+  padding-inline: 32px;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.12px;
+  line-height: 1.625rem;
   background-image: url(../assets/images/bg-header-mobile.png);
   background-repeat: no-repeat;
-  text-align: center;
-  margin-bottom: 160px;
 }
 
-@media screen and (width>=768px) {
+.header__text {
+  margin-bottom: 3rem;
+}
+
+@media screen and (width >= 768px) {
   .header {
+    font-size: 1.25rem;
+    letter-spacing: 0.0094rem;
+    line-height: 1.875rem;
     background-image: url(../assets/images/bg-header-desktop.png);
   }
 }
 
 .logo {
   margin-inline: auto;
+  margin-bottom: 4rem;
 }
 
-.text {
-  letter-spacing: 0.12px;
-  line-height: 26px;
-  color: var(--text-color);
-  margin-bottom: 48px;
+.logo--footer {
+  width: 3.4375rem;
+  margin-bottom: 2.5rem;
 }
 
-@media screen and (width >=768px) {
-  .text {
-    margin-inline: auto;
+@media screen and (width >= 48rem) {
+  .logo--footer {
+    margin-inline: 0;
+  }
+}
+
+.title {
+  margin: 0;
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+.title--xl {
+  font-size: 2rem;
+  letter-spacing: -0.0325rem;
+  line-height: 2.5rem;
+}
+
+.title--l {
+  font-size: 1.75rem;
+}
+
+.title--s {
+  font-size: 1.5rem;
+  letter-spacing: -0.0244rem;
+}
+
+@media screen and (width >= 48rem) {
+  .title--xl {
+    font-size: 2.875rem;
+    letter-spacing: -0.0469rem;
   }
 
-  .text--long {
-    width: 730px;
+  .title--l {
+    font-size: 2.25rem;
+  }
+}
+
+.container {
+  width: 19.4375rem;
+  margin-inline: auto;
+  margin-bottom: 11.625rem;
+  text-align: center;
+}
+
+@media screen and (width >= 48rem) {
+  .container {
+    width: 45.625rem;
+    margin-bottom: 9.375rem;
+  }
+}
+
+.container__header {
+  margin-bottom: 65px;
+}
+
+.container--flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (width >= 48rem) {
+  .container--flex {
+    flex-direction: row;
+    gap: 6.875rem;
+  }
+
+  .container--xl {
+    width: 75.75rem;
+  }
+
+  .container--relative {
+    position: relative;
+    left: -400px;
+    text-align: left;
   }
 }
 
 .buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  margin-inline: auto;
+  gap: 24px;
 }
 
-@media screen and (width >=768px) {
+@media screen and (width >= 48rem) {
   .buttons {
-    flex-direction: row;
-    justify-content: center;
+    width: 29.375rem;
   }
 }
 
 .button {
-  width: 311px;
+  width: 100%;
+  padding-block: 0.8125rem;
   border-radius: 1.75rem;
-  padding-block: 13px;
-  color: #fff;
-  box-shadow: 0 10px 20px var(--button-color), var(--button-inner-shadow);
   background-color: var(--button-color);
+  color: white;
+  font-family: inherit;
+  box-shadow: 0 0.625rem 1.25rem var(--button-color), var(--button-inner-shadow);
 }
 
 .button--ios {
@@ -109,27 +183,75 @@ main {
   --button-color: var(--blue);
 }
 
-.section {
-  text-align: center;
+.image-computer {
+  margin-bottom: 3.5rem;
 }
 
 .article {
-  width: 350px;
+  width: 21.875rem;
+  flex-shrink: 0;
 }
 
-@media screen and (width >= 768px) {
-  .flex {
-    display: flex;
+.article__icon {
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.icons > * {
+  margin-bottom: 3.6875rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding-block: 3.25rem;
+  background-color: var(--footer-bg);
+}
+
+@media screen and (width >= 48rem) {
+  .footer {
+    flex-direction: row;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    padding-inline: 10.3125rem;
   }
+}
 
-  .image-computer {
-    position: relative;
-    left: -100px;
-  }
+.menu {
+  display: grid;
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
-  .article--left {
+.menu > * {
+  color: #4c545c;
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (width >= 48rem) {
+  .menu {
+    grid-template-columns: repeat(3, 10rem);
     text-align: left;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+/* https://codepen.io/sosuke/pen/Pjoqqp */
+
+@media (hover: hover) {
+  .menu > *:hover {
+    color: var(--green);
+  }
+
+  .social-links > *:hover {
+    filter: invert(57%) sepia(20%) saturate(1309%) hue-rotate(121deg) brightness(102%) contrast(99%);
   }
 }
